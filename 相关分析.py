@@ -48,7 +48,7 @@ def load_data(file_path):
                    '湿地损失', '规划不足', '政策因素', '洪水概率']
 
         # 读取数据，指定表头和编码
-        df = pd.read_csv(file_path, encoding=encoding, header=None, names=headers)
+        df = pd.read_csv(file_path, encoding=encoding, skiprows=1, names=headers)
         print(f"数据加载成功，共{df.shape[0]}行，{df.shape[1]}列")
         print(f"数据包含以下字段：{', '.join(df.columns.tolist())}")
 
